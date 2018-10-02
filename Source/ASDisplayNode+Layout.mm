@@ -888,7 +888,7 @@ ASLayoutElementStyleExtensibilityForwarding
 }
 
 - (ASLayoutTransition *)_locked_flattenLayoutTransitionIfNeeded:(ASLayoutTransition *)pendingLayoutTransition {
-  ASLayoutTransition *transition;
+  ASLayoutTransition *transition = pendingLayoutTransition;
   if ([ASDisplayNode shouldStoreUnflattenedLayouts]) {
     ASDisplayNodeLayout pendingLayout = pendingLayoutTransition.pendingLayout;
     _unflattenedLayout = pendingLayout.layout;
