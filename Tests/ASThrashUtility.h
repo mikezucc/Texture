@@ -30,17 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 static NSInteger ASThrashUpdateCurrentSerializationVersion = 1;
 
-static NSString *ASThrashArrayDescription(NSArray *array) {
-  NSMutableString *str = [NSMutableString stringWithString:@"(\n"];
-  NSInteger i = 0;
-  for (id obj in array) {
-    [str appendFormat:@"\t[%ld]: \"%@\",\n", (long)i, obj];
-    i += 1;
-  }
-  [str appendString:@")"];
-  return str;
-}
-
 @class ASThrashTestSection;
 static atomic_uint ASThrashTestItemNextID;
 @interface ASThrashTestItem: NSObject <NSSecureCoding>
